@@ -1,9 +1,10 @@
 import { memo, ElementType, CSSProperties } from "react";
 import cn from "classnames";
 import s from "./Typography.module.scss";
-import { Merienda, Open_Sans } from "next/font/google";
+import { Ubuntu, Open_Sans } from "next/font/google";
+import colors from "@/styles/colors.module.scss";
 
-const headerFont = Merienda({
+const headerFont = Ubuntu({
   weight: ["700"],
   subsets: ["latin"],
 });
@@ -18,39 +19,28 @@ export type TypographyProps = React.HTMLAttributes<HTMLElement> & {
   align?: "inherit" | "left" | "center" | "right" | "justify";
 
   /** The color of the component. It supports those theme colors that make sense for this component. */
-  color?:
-    | "blue"
-    | "blueWaters"
-    | "disabled"
-    | "error"
-    | "gray"
-    | "grayDark"
-    | "grayLight"
-    | "grayMedium"
-    | "grayMediumDark"
-    | "orange"
-    | "orangeSunrise"
-    | "berryBad"
-    | "success"
-    | "white";
+  color?: "white" | "black";
 
   /** The component used for the root node. Either a string to use a HTML element or a component. Overrides the behavior of the `variantMapping` prop. */
   componentProp?: ElementType;
 
-  /** Controls if the text is italicized or normal */
-  fontStyle?: "normal" | "italic";
+  /** Controls the gradient text */
+  gradient?: boolean;
 
-  /** Controls if the font weight is bold or normal */
-  fontWeight?: "normal" | "bold" | "semibold";
+  // /** Controls if the text is italicized or normal */
+  // fontStyle?: "normal" | "italic";
 
-  /** Controls the display type */
-  inline?: boolean;
+  // /** Controls if the font weight is bold or normal */
+  // fontWeight?: "normal" | "bold" | "semibold";
 
-  /** Controls the flex display attributes */
-  flex?: boolean;
+  // /** Controls the display type */
+  // inline?: boolean;
 
-  /** If true, the text will not wrap, but instead will truncate with a text overflow ellipsis. Note that text overflow can only happen with block or inline-block level elements (the element needs to have a width in order to overflow). */
-  noWrap?: boolean;
+  // /** Controls the flex display attributes */
+  // flex?: boolean;
+
+  // /** If true, the text will not wrap, but instead will truncate with a text overflow ellipsis. Note that text overflow can only happen with block or inline-block level elements (the element needs to have a width in order to overflow). */
+  // noWrap?: boolean;
 
   /** Applies the theme typography styles. */
   variant?:
@@ -65,18 +55,26 @@ export type TypographyProps = React.HTMLAttributes<HTMLElement> & {
 };
 
 export const Typography = memo(
-  ({ componentProp, variant = "body", align = "left" }: TypographyProps) => {
+  ({
+    componentProp,
+    variant = "body",
+    align,
+    color,
+    gradient,
+    children,
+  }: TypographyProps) => {
     const Component = componentProp || "p";
 
     return (
       <Component
-        style={{ textAlign: align }}
+        style={{ textAlign: align, color: color && colors[color] }}
         className={cn(
           variant.includes("h") ? headerFont.className : defaultFont.className,
-          s[variant]
+          s[variant],
+          gradient && s.gradient
         )}
       >
-        solidaro
+        {children}
       </Component>
     );
   }

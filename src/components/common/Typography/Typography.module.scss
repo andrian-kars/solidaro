@@ -41,3 +41,14 @@
   font-size: 0.75rem;
   line-height: 1.67;
 }
+
+.gradient {
+  background: -webkit-linear-gradient(
+    1deg,
+    var(--ulca-blue-color),
+    var(--silver-chalice-color) 10%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

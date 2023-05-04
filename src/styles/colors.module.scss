@@ -1,0 +1,7 @@
+$black-color: var(--black-color);
+$white-color: var(--white-color);
+
+:export {
+  black: $black-color;
+  white: $white-color;
+}
