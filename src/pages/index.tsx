@@ -1,3 +1,10 @@
+import { Landing } from "./sections";
+
+// This default export is required
 export default function Home() {
-  return <div>Welcome to Solidaro!</div>;
+  return (
+    <>
+      <Landing />
+    </>
+  );
 }
