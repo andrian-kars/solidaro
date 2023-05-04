@@ -1,0 +1,43 @@
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-weight: 700;
+}
+
+.h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+.h2 {
+  font-size: 1.375rem;
+  line-height: 1.27;
+}
+
+.h3 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.h4,
+.subHeader,
+.body {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.subHeader {
+  text-transform: uppercase;
+}
+
+.bodySm {
+  font-size: 0.875rem;
+  line-height: 1.42;
+}
+
+.bodyTiny {
+  font-size: 0.75rem;
+  line-height: 1.67;
+}
