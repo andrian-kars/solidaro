@@ -56,26 +56,21 @@ type TypographyProps = React.HTMLAttributes<HTMLElement> & {
 
 export const Typography = memo(
   ({
-    componentProp,
+    componentProp: Component = "p",
     variant = "body",
     align,
     color,
     gradient,
-    children,
-  }: TypographyProps) => {
-    const Component = componentProp || "p";
-
-    return (
-      <Component
-        style={{ textAlign: align, color: color && colors[color] }}
-        className={cn(
-          variant.includes("h") ? headerFont.className : defaultFont.className,
-          s[variant],
-          gradient && s.gradient
-        )}
-      >
-        {children}
-      </Component>
-    );
-  }
+    ...other
+  }: TypographyProps) => (
+    <Component
+      {...other}
+      style={{ textAlign: align, color: color && colors[color] }}
+      className={cn(
+        variant.includes("h") ? headerFont.className : defaultFont.className,
+        s[variant],
+        gradient && s.gradient
+      )}
+    />
+  )
 );
