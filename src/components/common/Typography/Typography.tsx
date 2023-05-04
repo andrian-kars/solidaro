@@ -14,7 +14,7 @@ const defaultFont = Open_Sans({
   subsets: ["latin"],
 });
 
-export type TypographyProps = React.HTMLAttributes<HTMLElement> & {
+type TypographyProps = React.HTMLAttributes<HTMLElement> & {
   /** Set the text-align on the component. */
   align?: "inherit" | "left" | "center" | "right" | "justify";
 
