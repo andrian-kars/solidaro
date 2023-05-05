@@ -1,24 +1,58 @@
 @use "@/styles/variables" as var;
 
 .button {
-  padding: 7px 20px;
+  padding: 5px 10px 4px;
   outline: none;
+  border: none;
   text-decoration: none;
+  color: var(--white-color);
+  background-color: transparent;
+  transition: 0.3s;
+  text-transform: uppercase;
   cursor: pointer;
+
+  svg {
+    transition: 0.3s;
+  }
+
+  @media (min-width: var.$tablet) {
+    padding: 6px 15px;
+  }
+
+  @media (min-width: var.$desktop) {
+    padding: 7px 20px;
+  }
 }
 
 .primary {
   border: 1px solid var(--white-color);
   border-radius: 3px;
-  color: var(--white-color);
-  background-color: transparent;
-  text-transform: uppercase;
-  transition: 0.3s;
 
+  svg {
+    fill: var(--white-color);
+  }
+
+  &.active,
   &:hover,
   &:active,
   &:focus {
     background-color: var(--white-color);
     color: var(--black-color);
+
+    svg {
+      fill: var(--black-color);
+    }
+  }
+}
+
+.secondary {
+  padding: 5px 5px;
+  border-bottom: 1px solid transparent;
+
+  &.active,
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom-color: var(--white-color);
   }
 }

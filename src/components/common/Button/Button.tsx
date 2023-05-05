@@ -18,7 +18,7 @@ type ButtonTypes = HTMLAttributes<HTMLElement> & {
   size?: ButtonSize;
   component?: ElementType;
   href?: string;
-  text: string | ElementType;
+  text?: string;
 };
 
 export const Button = memo(
@@ -32,29 +32,24 @@ export const Button = memo(
     className,
     href,
     text,
+    children,
     component: Component = href ? "a" : "button",
     ...other
-  }: ButtonTypes) => {
-    return (
-      <Component
-        {...other}
-        href={href}
-        tabIndex={tabIndex}
-        className={cn(
-          s.button,
-          active && s.active,
-          disabled && s.disabled,
-          className,
-          s[variant],
-          s[size]
-        )}
-      >
-        {typeof text === "string" ? (
-          <Typography variant="bodySm">{text}</Typography>
-        ) : (
-          text
-        )}
-      </Component>
-    );
-  }
+  }: ButtonTypes) => (
+    <Component
+      {...other}
+      href={href}
+      tabIndex={tabIndex}
+      className={cn(
+        s.button,
+        active && s.active,
+        disabled && s.disabled,
+        className,
+        s[variant],
+        s[size]
+      )}
+    >
+      {text ? <Typography variant="bodySm">{text}</Typography> : children}
+    </Component>
+  )
 );

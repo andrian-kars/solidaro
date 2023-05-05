@@ -1,0 +1,33 @@
+.button {
+  position: relative;
+  display: flex;
+
+  svg {
+    display: inline;
+    fill: var(--white-color);
+    height: 20px;
+    margin-left: 3px;
+  }
+}
+
+.active {
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.dropDown {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 35px;
+  transition: 0.3s;
+
+  li {
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+}

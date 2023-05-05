@@ -5,6 +5,19 @@
 .h2,
 .h3,
 .h4,
+.h5,
+.subHeader,
+.body,
+.bodySm,
+.bodyTiny {
+  text-shadow: var(--ulca-blue-color) 0px 0px 10px;
+}
+
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
 .h5 {
   font-weight: 700;
 }
