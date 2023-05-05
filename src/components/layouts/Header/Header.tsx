@@ -1,10 +1,10 @@
 import { memo } from "react";
 import s from "./Header.module.scss";
-import { Flex, Typography } from "@/components/common";
+import { Button, Flex, Typography } from "@/components/common";
 import Image from "next/image";
 import logoPic from "@/../public/images/initial/logoPic.png";
 
-const HEADER_GAP = "5px";
+const HEADER_GAP = "10px";
 
 export const Header = memo(() => (
   <Flex
@@ -22,7 +22,8 @@ export const Header = memo(() => (
         🇺🇦
       </Typography>
     </Flex>
-    <Flex>
+    <Flex gap={HEADER_GAP} alignItems="center">
+      <Button href="#thirdPage" text="Schedule a call" />
       <Typography variant="subHeader">EN</Typography>
     </Flex>
   </Flex>

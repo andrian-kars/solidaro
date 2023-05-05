@@ -1,4 +1,4 @@
-import { memo, ElementType, CSSProperties } from "react";
+import { memo, ElementType, HTMLAttributes } from "react";
 import cn from "classnames";
 import s from "./Typography.module.scss";
 import { Ubuntu, Open_Sans } from "next/font/google";
@@ -14,7 +14,7 @@ const defaultFont = Open_Sans({
   subsets: ["latin"],
 });
 
-type TypographyProps = React.HTMLAttributes<HTMLElement> & {
+type TypographyProps = HTMLAttributes<HTMLElement> & {
   /** Set the text-align on the component. */
   align?: "inherit" | "left" | "center" | "right" | "justify";
 
