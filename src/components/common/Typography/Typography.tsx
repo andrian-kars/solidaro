@@ -24,9 +24,6 @@ type TypographyProps = HTMLAttributes<HTMLElement> & {
   /** The component used for the root node. Either a string to use a HTML element or a component. Overrides the behavior of the `variantMapping` prop. */
   componentProp?: ElementType;
 
-  /** Controls the gradient text */
-  gradient?: boolean;
-
   // /** Controls if the text is italicized or normal */
   // fontStyle?: "normal" | "italic";
 
@@ -61,7 +58,6 @@ export const Typography = memo(
     variant = "body",
     align,
     color,
-    gradient,
     className,
     ...other
   }: TypographyProps) => (
@@ -71,8 +67,7 @@ export const Typography = memo(
       className={cn(
         className,
         variant.includes("h") ? headerFont.className : defaultFont.className,
-        s[variant],
-        gradient && s.gradient
+        s[variant]
       )}
     />
   )
