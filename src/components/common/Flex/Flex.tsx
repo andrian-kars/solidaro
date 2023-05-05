@@ -16,6 +16,7 @@ type FlexProps = HTMLAttributes<HTMLElement> & {
   justifyContent?: CSSProperties["justifyContent"];
   justifyItems?: CSSProperties["justifyItems"];
   justifySelf?: CSSProperties["justifySelf"];
+  gap?: CSSProperties["gap"];
   order?: CSSProperties["order"];
   height?: CSSProperties["height"];
   width?: CSSProperties["width"];
@@ -41,6 +42,7 @@ export const Flex = ({
   order,
   height,
   width,
+  gap,
   ...other
 }: FlexProps) => (
   <Component
@@ -62,6 +64,7 @@ export const Flex = ({
       justifyItems,
       justifySelf,
       order,
+      gap,
     }}
   />
 );

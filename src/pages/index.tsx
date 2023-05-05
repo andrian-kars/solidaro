@@ -1,7 +1,7 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import { Landing } from "./sections";
 
-const SEL = "custom-section";
+const SEL = "page-section";
 
 // This default export is required
 export default function Home() {
@@ -22,10 +22,8 @@ export default function Home() {
       sectionSelector={`.${SEL}`}
       render={() => (
         <ReactFullpage.Wrapper>
-          {[0, 1, 2, 3, 4, 5].map((key) => (
-            <section key={key} className={SEL}>
-              <Landing />
-            </section>
+          {[0, 1, 2, 3, 4, 5, 6].map((key) => (
+            <Landing key={key} className={SEL} num={key} />
           ))}
         </ReactFullpage.Wrapper>
       )}

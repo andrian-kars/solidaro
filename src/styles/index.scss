@@ -13,21 +13,60 @@
 }
 
 body {
-  background-color: var(--alabaster-color);
+  color: var(--white-color);
+}
+
+.layout {
+  margin: 0 auto;
+  padding: var(--layout);
+  width: calc(100% - (var(--layout) * 2));
+  padding: 0 var(--layout) var(--layout);
+
+  @media (min-width: var.$bigger-mobile) {
+    width: 510px;
+  }
+
+  @media (min-width: var.$tablet) {
+    width: 720px;
+  }
+
+  @media (min-width: var.$bigger-tablet) {
+    width: 970px;
+  }
+
+  @media (min-width: var.$desktop) {
+    width: 1170px;
+  }
+
+  @media (min-width: var.$bigger-desktop) {
+    width: 1320px;
+  }
+}
+
+.pb {
+  padding-bottom: 5px;
+}
+
+.pb-2 {
+  padding-bottom: var(--layout);
 }
 
 .pr {
-  padding-right: var(--layout);
+  padding-right: 5px;
 }
 
 .pr-2 {
-  padding-right: calc(var(--layout) * 2);
+  padding-right: var(--layout);
 }
 
 .pr-3 {
-  padding-right: calc(var(--layout) * 3);
+  padding-right: calc(var(--layout) * 2);
 }
 
 .pr-4 {
+  padding-right: calc(var(--layout) * 3);
+}
+
+.pr-5 {
   padding-right: calc(var(--layout) * 4);
 }
