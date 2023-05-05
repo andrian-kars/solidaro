@@ -44,6 +44,7 @@ type TypographyProps = React.HTMLAttributes<HTMLElement> & {
 
   /** Applies the theme typography styles. */
   variant?:
+    | "h0"
     | "h1"
     | "h2"
     | "h3"
@@ -61,12 +62,14 @@ export const Typography = memo(
     align,
     color,
     gradient,
+    className,
     ...other
   }: TypographyProps) => (
     <Component
       {...other}
       style={{ textAlign: align, color: color && colors[color] }}
       className={cn(
+        className,
         variant.includes("h") ? headerFont.className : defaultFont.className,
         s[variant],
         gradient && s.gradient
