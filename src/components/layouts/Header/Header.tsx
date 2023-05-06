@@ -1,5 +1,6 @@
 import logoPic from "@/../public/images/initial/logoPic.png";
 import { Button, Dropdown, Flex, Typography } from "@/components/common";
+import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
@@ -22,7 +23,9 @@ export const Header = memo(() => {
       className={s.header}
     >
       <Flex alignItems="center" gap={HEADER_GAP}>
-        {width >= 576 && <Image src={logoPic} alt="Logo Tree" width={51} />}
+        {width >= breakpoints.biggerMobile && (
+          <Image src={logoPic} alt="Logo Tree" width={51} />
+        )}
         <Typography variant="h1" componentProp="h1">
           Solidaro
         </Typography>

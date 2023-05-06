@@ -1,8 +1,8 @@
-import { memo, ElementType, HTMLAttributes } from "react";
-import cn from "classnames";
-import s from "./Typography.module.scss";
-import { Ubuntu, Open_Sans } from "next/font/google";
 import colors from "@/styles/colors.module.scss";
+import cn from "classnames";
+import { Open_Sans, Ubuntu } from "next/font/google";
+import { ElementType, HTMLAttributes, memo } from "react";
+import s from "./Typography.module.scss";
 
 const headerFont = Ubuntu({
   weight: ["700"],

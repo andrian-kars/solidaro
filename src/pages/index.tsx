@@ -1,7 +1,8 @@
-import ReactFullpage from "@fullpage/react-fullpage";
-import { Landing } from "./sections";
+import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";
+import ReactFullpage from "@fullpage/react-fullpage";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Landing } from "./sections";
 
 const SEL = "page-section";
 
@@ -13,7 +14,7 @@ export default function Home() {
     <ReactFullpage
       licenseKey="L4BPH-Q0M78-2HMK7-84MBJ-ZXRZN"
       credits={{ enabled: false }}
-      navigation={width >= 768}
+      navigation={width >= breakpoints.tablet}
       scrollingSpeed={1000}
       anchors={[
         "firstPage",

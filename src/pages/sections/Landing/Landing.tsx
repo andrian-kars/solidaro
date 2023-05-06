@@ -1,11 +1,12 @@
-import { memo } from "react";
-import Image from "next/image";
 import logoPic from "@/../public/images/initial/logoPic.png";
 import { Flex, Typography } from "@/components/common";
-import s from "./Landing.module.scss";
-import cn from "classnames";
+import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";
+import cn from "classnames";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
+import { memo } from "react";
+import s from "./Landing.module.scss";
 
 type LandingTypes = {
   className: string;
@@ -38,7 +39,9 @@ export const Landing = memo(({ className, num }: LandingTypes) => {
             {t("Bottom quote")}
           </Typography>
         </div>
-        {width >= 992 && <Image src={logoPic} alt="Logo Tree" width={250} />}
+        {width >= breakpoints.biggerTablet && (
+          <Image src={logoPic} alt="Logo Tree" width={250} />
+        )}
       </Flex>
     </section>
   );

@@ -1,6 +1,6 @@
 @use "reset";
 @use "colors";
-@use "variables" as var;
+@use "variables.module" as var;
 
 :root {
   --layout: 10px;
