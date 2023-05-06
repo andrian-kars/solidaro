@@ -1,34 +1,36 @@
-@use "@/styles/variables" as var;
+@use "@/styles/variables.module" as var;
 
-.landing {
-  flex-direction: column;
-  gap: var(--layout);
+.container {
+  background-image: url("./../../../../public/images/initial/railway.jpg");
+}
 
-  .text {
-    width: 300px;
-  }
-
-  img {
-    object-fit: contain;
-    width: 80%;
-    height: auto;
+.content {
+  .subText {
+    max-width: 430px;
   }
 
   @media (min-width: var.$tablet) {
-    .text {
-      width: 400px;
-    }
-
-    img {
-      width: 50%;
+    .subText {
+      width: 550px;
+      max-width: 100%;
     }
   }
 
   @media (min-width: var.$bigger-tablet) {
-    flex-direction: row;
+    img {
+      margin-left: 100px;
+    }
+  }
 
-    .text {
-      width: auto;
+  @media (min-width: var.$desktop) {
+    img {
+      margin-left: 140px;
+    }
+  }
+
+  @media (min-width: var.$bigger-desktop) {
+    img {
+      margin-left: 270px;
     }
   }
 }

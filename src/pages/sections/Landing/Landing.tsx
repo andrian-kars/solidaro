@@ -10,15 +10,14 @@ import s from "./Landing.module.scss";
 
 type LandingTypes = {
   className: string;
-  num: number;
 };
 
-export const Landing = memo(({ className, num }: LandingTypes) => {
+export const Landing = memo(({ className }: LandingTypes) => {
   const { width } = useWindowDimensions();
   const { t } = useTranslation(["initial", "common"]);
 
   return (
-    <section className={cn(s.container, className, s["container" + num])}>
+    <section className={cn(s.container, className)}>
       <Flex as="div" alignItems="center" className={cn(s.content, "layout")}>
         <div>
           <Typography variant="h1" componentProp="h2" className={cn("pb")}>
