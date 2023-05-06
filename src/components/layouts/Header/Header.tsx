@@ -1,10 +1,11 @@
 import logoPic from "@/../public/images/initial/logoPic.png";
-import { Button, Dropdown, Flex, Typography } from "@/components/common";
+import { DropdownLang } from "@/components";
+import { Button, Flex, Typography } from "@/components/common";
 import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
-import { memo, useState } from "react";
+import { memo } from "react";
 import s from "./Header.module.scss";
 
 const HEADER_GAP = "10px";
@@ -12,8 +13,6 @@ const HEADER_GAP = "10px";
 export const Header = memo(() => {
   const { width } = useWindowDimensions();
   const { t } = useTranslation();
-
-  const [isDropdownOpened, setIsDropdownOpened] = useState(false);
 
   return (
     <Flex
@@ -37,7 +36,7 @@ export const Header = memo(() => {
         {width >= 400 && (
           <Button href="#thirdPage" text={t("Schedule a call")} />
         )}
-        <Dropdown isActive={isDropdownOpened} onClick={setIsDropdownOpened} />
+        <DropdownLang />
       </Flex>
     </Flex>
   );

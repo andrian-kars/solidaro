@@ -2,28 +2,24 @@ import { useLocalStorage } from "@/hooks";
 import cn from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { memo, useEffect } from "react";
-import { Button } from "../Button/Button";
-import { Flex } from "../Flex/Flex";
-import { Typography } from "../Typography/Typography";
-import s from "./Dropdown.module.scss";
+import { memo, useEffect, useState } from "react";
+import { Button } from "../common/Button/Button";
+import { Flex } from "../common/Flex/Flex";
+import { Typography } from "../common/Typography/Typography";
+import s from "./DropdownLang.module.scss";
 
-type DropdownProps = {
-  isActive: boolean;
-  onClick: (value: boolean) => void;
-};
-
-export const Dropdown = memo(({ isActive, onClick }: DropdownProps) => {
+export const DropdownLang = memo(() => {
   const { locales, locale, push } = useRouter();
   const [localLang, setLocalLang] = useLocalStorage("lang", "");
+  const [isDropdownOpened, setIsDropdownOpened] = useState(false);
 
-  function handleDropdownClick() {
-    onClick(!isActive);
+  function handleDropdownLangClick() {
+    setIsDropdownOpened((prev) => !prev);
   }
 
   function handleBlur() {
     setTimeout(() => {
-      onClick(false);
+      setIsDropdownOpened(false);
     }, 300);
   }
 
@@ -39,17 +35,22 @@ export const Dropdown = memo(({ isActive, onClick }: DropdownProps) => {
 
   return (
     <Button
-      className={cn(s.button, isActive && s.active)}
+      className={cn(s.button, isDropdownOpened && s.active)}
       variant="secondary"
-      active={isActive}
-      onClick={handleDropdownClick}
+      active={isDropdownOpened}
+      onClick={handleDropdownLangClick}
       onBlur={handleBlur}
     >
       {/* @ts-ignore */}
       <Typography variant="subHeader">{selectFlag(locale)}</Typography>
-      <DropDownSvg />
-      {isActive && (
-        <Flex as="ul" flexDirection="column" gap="5px" className={s.dropDown}>
+      <DropdownLangSvg />
+      {isDropdownOpened && (
+        <Flex
+          as="ul"
+          flexDirection="column"
+          gap="5px"
+          className={s.DropdownLang}
+        >
           {/* @ts-ignore */}
           {locales
             .filter((el) => el !== locale)
@@ -94,7 +95,7 @@ const selectCountrlyLang = (locale: string) => {
   }
 };
 
-const DropDownSvg = memo(() => (
+const DropdownLangSvg = memo(() => (
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <rect x="0" fill="none" width="24" height="24" />
     <g>
