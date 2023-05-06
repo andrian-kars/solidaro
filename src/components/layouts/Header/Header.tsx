@@ -1,10 +1,10 @@
-import { memo, useState } from "react";
-import s from "./Header.module.scss";
-import { Button, Dropdown, Flex, Typography } from "@/components/common";
-import Image from "next/image";
 import logoPic from "@/../public/images/initial/logoPic.png";
+import { Button, Dropdown, Flex, Typography } from "@/components/common";
 import { useWindowDimensions } from "@/hooks";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
+import { memo, useState } from "react";
+import s from "./Header.module.scss";
 
 const HEADER_GAP = "10px";
 

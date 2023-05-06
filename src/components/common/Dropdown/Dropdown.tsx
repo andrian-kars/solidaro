@@ -1,11 +1,12 @@
-import { MouseEvent, memo, useEffect, useState } from "react";
-import { Button } from "../Button/Button";
+import { useLocalStorage } from "@/hooks";
 import cn from "classnames";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { memo, useEffect } from "react";
+import { Button } from "../Button/Button";
+import { Flex } from "../Flex/Flex";
 import { Typography } from "../Typography/Typography";
 import s from "./Dropdown.module.scss";
-import { useEffectOnce, useLocalStorage } from "@/hooks";
-import { useRouter } from "next/router";
-import Link from "next/link";
 
 type DropdownProps = {
   isActive: boolean;
@@ -44,25 +45,54 @@ export const Dropdown = memo(({ isActive, onClick }: DropdownProps) => {
       onClick={handleDropdownClick}
       onBlur={handleBlur}
     >
-      <Typography variant="subHeader">{locale}</Typography>
+      {/* @ts-ignore */}
+      <Typography variant="h1">{selectFlag(locale)}</Typography>
       <DropDownSvg />
       {isActive && (
-        <ul className={s.dropDown}>
+        <Flex as="ul" flexDirection="column" gap="5px" className={s.dropDown}>
           {/* @ts-ignore */}
           {locales
             .filter((el) => el !== locale)
             .map((loc) => (
               <li key={loc} onClick={() => handleItemClick(loc)} tabIndex={0}>
                 <Link href="/" locale={loc}>
-                  <Typography variant="subHeader">{loc}</Typography>
+                  <Typography align="right" variant="subHeader">
+                    {selectCountrlyLang(loc)}
+                  </Typography>
                 </Link>
               </li>
             ))}
-        </ul>
+        </Flex>
       )}
     </Button>
   );
 });
+
+const selectFlag = (locale: string) => {
+  switch (locale) {
+    case "en":
+      return "🇬🇧";
+    case "ja":
+      return "🇯🇵";
+    case "de":
+      return "🇩🇪";
+    case "uk":
+      return "🇺🇦";
+  }
+};
+
+const selectCountrlyLang = (locale: string) => {
+  switch (locale) {
+    case "en":
+      return "English";
+    case "ja":
+      return "日本語";
+    case "de":
+      return "Deutsch";
+    case "uk":
+      return "Українська";
+  }
+};
 
 const DropDownSvg = memo(() => (
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
