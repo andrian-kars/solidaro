@@ -46,7 +46,7 @@ export const Dropdown = memo(({ isActive, onClick }: DropdownProps) => {
       onBlur={handleBlur}
     >
       {/* @ts-ignore */}
-      <Typography variant="h1">{selectFlag(locale)}</Typography>
+      <Typography variant="subHeader">{selectFlag(locale)}</Typography>
       <DropDownSvg />
       {isActive && (
         <Flex as="ul" flexDirection="column" gap="5px" className={s.dropDown}>
@@ -71,13 +71,13 @@ export const Dropdown = memo(({ isActive, onClick }: DropdownProps) => {
 const selectFlag = (locale: string) => {
   switch (locale) {
     case "en":
-      return "🇬🇧";
+      return "en";
     case "ja":
-      return "🇯🇵";
+      return "日本語";
     case "de":
-      return "🇩🇪";
+      return "de";
     case "uk":
-      return "🇺🇦";
+      return "укр";
   }
 };
 

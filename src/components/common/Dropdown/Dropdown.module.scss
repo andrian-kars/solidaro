@@ -22,15 +22,15 @@
 .dropDown {
   position: absolute;
   right: 0;
-  top: 50px;
+  top: 35px;
   transition: 0.3s;
 
   @media (min-width: var.$tablet) {
-    top: 55px;
+    top: 35px;
   }
 
   @media (min-width: var.$desktop) {
-    top: 60px;
+    top: 40px;
   }
 
   li {
