@@ -23,7 +23,7 @@ export const Header = memo(() => {
     >
       <Flex alignItems="center" gap={HEADER_GAP}>
         {width >= breakpoints.biggerMobile && (
-          <Image src={logoPic} alt="Logo Tree" width={51} />
+          <Image src={logoPic} alt={t("Logo picture")} width={51} />
         )}
         <Typography variant="h1" componentProp="h1">
           Solidaro

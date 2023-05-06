@@ -15,7 +15,7 @@ type LandingTypes = {
 
 export const Landing = memo(({ className, num }: LandingTypes) => {
   const { width } = useWindowDimensions();
-  const { t } = useTranslation("initial");
+  const { t } = useTranslation(["initial", "common"]);
 
   return (
     <section className={cn(s.container, className, s["container" + num])}>
@@ -40,7 +40,11 @@ export const Landing = memo(({ className, num }: LandingTypes) => {
           </Typography>
         </div>
         {width >= breakpoints.biggerTablet && (
-          <Image src={logoPic} alt="Logo Tree" width={250} />
+          <Image
+            src={logoPic}
+            alt={t("Logo picture", { ns: "initial" })}
+            width={250}
+          />
         )}
       </Flex>
     </section>
