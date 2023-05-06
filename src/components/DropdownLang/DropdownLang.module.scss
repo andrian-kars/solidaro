@@ -19,17 +19,13 @@
   }
 }
 
-.dropDown {
+.dropdownLang {
   position: absolute;
   right: 0;
-  top: 35px;
+  top: 37px;
   transition: 0.3s;
 
   @media (min-width: var.$tablet) {
-    top: 35px;
-  }
-
-  @media (min-width: var.$desktop) {
     top: 40px;
   }
 

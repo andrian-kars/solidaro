@@ -49,7 +49,7 @@ export const DropdownLang = memo(() => {
           as="ul"
           flexDirection="column"
           gap="5px"
-          className={s.DropdownLang}
+          className={s.dropdownLang}
         >
           {/* @ts-ignore */}
           {locales
