@@ -3,10 +3,9 @@ import { Button } from "../Button/Button";
 import cn from "classnames";
 import { Typography } from "../Typography/Typography";
 import s from "./Dropdown.module.scss";
-import { useLocalStorage } from "@/hooks";
-
-const LANGS = ["en", "ua", "de", "jp"];
-const DEFAULT_LANG = LANGS[0];
+import { useEffectOnce, useLocalStorage } from "@/hooks";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 type DropdownProps = {
   isActive: boolean;
@@ -14,7 +13,8 @@ type DropdownProps = {
 };
 
 export const Dropdown = memo(({ isActive, onClick }: DropdownProps) => {
-  const [localLang, setLocalLang] = useLocalStorage("lang", DEFAULT_LANG);
+  const { locales, locale, push } = useRouter();
+  const [localLang, setLocalLang] = useLocalStorage("lang", "");
 
   function handleDropdownClick() {
     onClick(!isActive);
@@ -23,12 +23,18 @@ export const Dropdown = memo(({ isActive, onClick }: DropdownProps) => {
   function handleBlur() {
     setTimeout(() => {
       onClick(false);
-    }, 100);
+    }, 300);
   }
 
   function handleItemClick(lang: string) {
     setLocalLang(lang);
   }
+
+  useEffect(() => {
+    localLang &&
+      localLang !== locale &&
+      push("/", undefined, { locale: localLang });
+  }, [locale, localLang, push]);
 
   return (
     <Button
@@ -38,15 +44,20 @@ export const Dropdown = memo(({ isActive, onClick }: DropdownProps) => {
       onClick={handleDropdownClick}
       onBlur={handleBlur}
     >
-      <Typography variant="subHeader">{localLang}</Typography>
+      <Typography variant="subHeader">{locale}</Typography>
       <DropDownSvg />
       {isActive && (
         <ul className={s.dropDown}>
-          {LANGS.filter((el) => el !== localLang).map((el) => (
-            <li key={el} onClick={() => handleItemClick(el)} tabIndex={0}>
-              <Typography variant="subHeader">{el}</Typography>
-            </li>
-          ))}
+          {/* @ts-ignore */}
+          {locales
+            .filter((el) => el !== locale)
+            .map((loc) => (
+              <li key={loc} onClick={() => handleItemClick(loc)} tabIndex={0}>
+                <Link href="/" locale={loc}>
+                  <Typography variant="subHeader">{loc}</Typography>
+                </Link>
+              </li>
+            ))}
         </ul>
       )}
     </Button>

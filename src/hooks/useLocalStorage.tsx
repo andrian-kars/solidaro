@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { useEffectOnce } from "./useEffectOnce";
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
