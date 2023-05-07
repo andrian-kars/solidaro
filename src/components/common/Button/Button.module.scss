@@ -1,6 +1,7 @@
 @use "@/styles/variables.module" as var;
 
 .button {
+  display: block;
   padding: 5px 10px 4px;
   outline: none;
   border: none;
@@ -37,6 +38,9 @@
   &:focus {
     background-color: var(--white-color);
     color: var(--black-color);
+    * {
+      text-shadow: none;
+    }
 
     svg {
       fill: var(--black-color);

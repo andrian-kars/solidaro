@@ -48,6 +48,7 @@ type TypographyProps = HTMLAttributes<HTMLElement> & {
     | "h4"
     | "subHeader"
     | "body"
+    | "bodyBg"
     | "bodySm"
     | "bodyTiny";
 };

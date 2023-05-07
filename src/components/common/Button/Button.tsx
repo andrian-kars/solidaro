@@ -1,8 +1,7 @@
-import { memo, ElementType, HTMLAttributes } from "react";
 import cn from "classnames";
-import s from "./Button.module.scss";
-import colors from "@/styles/colors.module.scss";
+import { ElementType, HTMLAttributes, memo } from "react";
 import { Typography } from "../Typography/Typography";
+import s from "./Button.module.scss";
 
 type ButtonSize = "mini" | "small" | "medium";
 
@@ -10,6 +9,7 @@ type ButtonVariant = "primary" | "secondary";
 
 type ButtonTypes = HTMLAttributes<HTMLElement> & {
   className?: string;
+  borderWidth?: number;
   active?: boolean;
   disabled?: boolean;
   tabIndex?: number;
@@ -32,12 +32,14 @@ export const Button = memo(
     className,
     href,
     text,
+    borderWidth,
     children,
     component: Component = href ? "a" : "button",
     ...other
   }: ButtonTypes) => (
     <Component
       {...other}
+      style={{ borderWidth }}
       href={href}
       tabIndex={tabIndex}
       className={cn(
