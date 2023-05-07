@@ -1,4 +1,4 @@
-import colors from "@/styles/colors.module.scss";
+import { colors, colorsType } from "@/constants";
 import cn from "classnames";
 import { Open_Sans, Ubuntu } from "next/font/google";
 import { ElementType, HTMLAttributes, memo } from "react";
@@ -19,7 +19,7 @@ type TypographyProps = HTMLAttributes<HTMLElement> & {
   align?: "inherit" | "left" | "center" | "right" | "justify";
 
   /** The color of the component. It supports those theme colors that make sense for this component. */
-  color?: "white" | "black";
+  color?: colorsType;
 
   /** The component used for the root node. Either a string to use a HTML element or a component. Overrides the behavior of the `variantMapping` prop. */
   componentProp?: ElementType;

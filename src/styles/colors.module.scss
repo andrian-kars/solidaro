@@ -1,7 +1,10 @@
-$black-color: var(--black-color);
-$white-color: var(--white-color);
-
 :export {
-  black: $black-color;
-  white: $white-color;
+  black: var(--black-color);
+  white: var(--white-color);
+  blue: var(--ulca-blue-color);
+  chalice: var(--silver-chalice-color);
+  purple: var(--dusk-storm-color);
+  alabaster: var(--alabaster-color);
+  orange: var(--deer-color);
+  brown: var(--puce-red-color);
 }

@@ -1,8 +1,19 @@
 @use "reset";
-@use "colors";
+@use "colors.module";
 @use "variables.module" as var;
 
 :root {
+  --black-color: #000;
+  --white-color: #fff;
+
+  // Gentleman colors
+  --ulca-blue-color: #516d98;
+  --silver-chalice-color: #b2a9a9;
+  --dusk-storm-color: #5842bc;
+  --alabaster-color: #f3f0e3;
+  --deer-color: #bc8a5f;
+  --puce-red-color: #682c36;
+
   --layout: 10px;
 }
 
