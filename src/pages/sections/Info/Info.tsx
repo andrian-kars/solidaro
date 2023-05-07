@@ -8,17 +8,13 @@ import s from "./Info.module.scss";
 
 type InfoTypes = {
   className: string;
-  num: number;
 };
 
-export const Info = memo(({ className, num }: InfoTypes) => {
+export const Info = memo(({ className }: InfoTypes) => {
   const { t } = useTranslation(["initial", "common"]);
 
   return (
-    <Flex
-      as="section"
-      className={cn(s.container, className, s["container" + num])}
-    >
+    <Flex as="section" className={cn(s.container, className)}>
       <Flex className={cn(s.content, "layout")}>
         <Flex flexDirection="column">
           <Typography variant="h1" componentProp="h3" className={cn("pb-2")}>
