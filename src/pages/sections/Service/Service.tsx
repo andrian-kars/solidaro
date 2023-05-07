@@ -6,17 +6,13 @@ import s from "./Service.module.scss";
 
 type ServiceTypes = {
   className: string;
-  num: number;
 };
 
-export const Service = memo(({ className, num }: ServiceTypes) => {
+export const Service = memo(({ className }: ServiceTypes) => {
   const { t } = useTranslation(["initial", "common"]);
 
   return (
-    <Flex
-      as="section"
-      className={cn(s.container, className, s["container" + num])}
-    >
+    <Flex as="section" className={cn(s.container, className)}>
       <Flex justifyContent="center" className={cn(s.content, "layout")}>
         <Flex
           flexDirection="column"
