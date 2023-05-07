@@ -1,0 +1,13 @@
+@use "@/styles/variables.module" as var;
+
+.content {
+  min-width: 165px;
+  background-color: rgba($color: #000, $alpha: 0.5);
+  padding: var(--layout);
+  border-radius: 10px;
+  text-transform: uppercase;
+
+  @media (min-width: var.$tablet) {
+    min-width: 225px;
+  }
+}
