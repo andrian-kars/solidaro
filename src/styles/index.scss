@@ -62,12 +62,20 @@ a:visited {
   padding-bottom: 5px;
 }
 
+.pb-1 {
+  padding-bottom: 10px;
+}
+
 .pb-2 {
   padding-bottom: var(--layout);
 }
 
 .pr {
   padding-right: 5px;
+}
+
+.pr-1 {
+  padding-right: 10px;
 }
 
 .pr-2 {

@@ -34,7 +34,7 @@ export const Header = memo(() => {
       </Flex>
       <Flex gap={HEADER_GAP} alignItems="center">
         {width >= 400 && (
-          <Button href="#thirdPage" text={t("Schedule a call")} />
+          <Button href="#schedule" text={t("Schedule a call")} />
         )}
         <DropdownLang />
       </Flex>

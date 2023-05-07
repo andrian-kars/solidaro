@@ -1,0 +1,67 @@
+@use "@/styles/variables.module" as var;
+
+.container {
+  background-image: url("./../../../../public/images/initial/service.jpg");
+}
+.container1 {
+  background-image: url("./../../../../public/images/initial/info1.jpg");
+  // background-position: ;
+}
+.container2 {
+  background-image: url("./../../../../public/images/initial/info2.jpg");
+  // background-position: ;
+}
+.container3 {
+  background-image: url("./../../../../public/images/initial/info3.jpg");
+}
+.container4 {
+  background-image: url("./../../../../public/images/initial/info4.jpg");
+  // background-position: ;
+}
+.container5 {
+  background-image: url("./../../../../public/images/initial/info5.jpg");
+  // background-position: ;
+}
+.container6 {
+  background-image: url("./../../../../public/images/initial/info6.jpg");
+  // background-position: ;
+}
+.container7 {
+  background-image: url("./../../../../public/images/initial/info7.jpg");
+  // background-position: ;
+}
+
+.content {
+  gap: 20px;
+  flex-direction: column;
+  // align-items: flex-start;
+  // justify-content: flex-start;
+  // // align-items: center;
+
+  @media (min-width: 470px) {
+    gap: 40px;
+  }
+
+  svg {
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  @media (min-width: var.$tablet) {
+    .left {
+      width: 500px;
+    }
+
+    .right {
+      width: 600px;
+    }
+  }
+
+  @media (min-width: var.$bigger-tablet) {
+    gap: 70px;
+    flex-direction: row;
+  }
+
+  @media (min-width: var.$desktop) {
+  }
+}
