@@ -1,5 +1,9 @@
 @use "@/styles/variables.module" as var;
 
+.container {
+  background-image: url("./../../../../public/images/initial/service.jpg");
+}
+
 .content {
   gap: 20px;
   flex-direction: column;
