@@ -1,0 +1,104 @@
+@use "@/styles/variables.module" as var;
+
+.container {
+  background-image: url("./../../../../public/images/initial/info.jpg");
+  // background-position: ;
+}
+.container1 {
+  background-image: url("./../../../../public/images/initial/info1.jpg");
+  // background-position: ;
+}
+.container2 {
+  background-image: url("./../../../../public/images/initial/info2.jpg");
+  // background-position: ;
+}
+.container3 {
+  background-image: url("./../../../../public/images/initial/info3.jpg");
+  transform: scaleX(-1);
+  background-position: right;
+  // background-position: ;
+}
+.container4 {
+  background-image: url("./../../../../public/images/initial/info4.jpg");
+  // background-position: ;
+}
+.container5 {
+  background-image: url("./../../../../public/images/initial/info5.jpg");
+  // background-position: ;
+}
+.container6 {
+  background-image: url("./../../../../public/images/initial/info6.jpg");
+  // background-position: ;
+}
+.container7 {
+  background-image: url("./../../../../public/images/initial/info7.jpg");
+  // background-position: ;
+}
+
+.content {
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+
+  .subText {
+    max-width: 430px;
+  }
+
+  @media (min-width: 470px) {
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  @media (min-width: var.$tablet) {
+    .subText {
+      max-width: 550px;
+    }
+  }
+
+  @media (min-width: var.$bigger-tablet) {
+    flex-direction: row;
+    gap: 70px;
+  }
+
+  @media (min-width: var.$desktop) {
+    gap: 10px;
+  }
+}
+
+.cards {
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--layout);
+  align-items: center;
+
+  @media (min-width: 470px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  @media (min-width: var.$bigger-tablet) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  @media (min-width: var.$desktop) {
+    width: calc(var(--layout) + (265px * 2));
+    margin-right: 90px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.texts {
+  align-items: center;
+
+  @media (min-width: 470px) {
+    align-items: flex-start;
+  }
+
+  @media (min-width: var.$tablet) {
+    margin-right: 50px;
+  }
+}

@@ -2,7 +2,7 @@ import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";
 import ReactFullpage from "@fullpage/react-fullpage";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Landing } from "./sections";
+import { Info, Landing } from "./sections";
 
 const SEL = "page-section";
 
@@ -17,8 +17,8 @@ export default function Home() {
       navigation={width >= breakpoints.tablet}
       scrollingSpeed={1000}
       anchors={[
-        "firstPage",
-        "secondPage",
+        "landing",
+        "info",
         "thirdPage",
         "fourthPage",
         "fifthPage",
@@ -27,8 +27,9 @@ export default function Home() {
       sectionSelector={`.${SEL}`}
       render={() => (
         <ReactFullpage.Wrapper>
+          <Landing className={SEL} />
           {[0, 1, 2, 3, 4, 5, 6, 7].map((key) => (
-            <Landing key={key} className={SEL} num={key} />
+            <Info key={key} className={SEL} num={key} />
           ))}
         </ReactFullpage.Wrapper>
       )}

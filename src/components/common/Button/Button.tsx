@@ -15,6 +15,7 @@ type ButtonTypes = HTMLAttributes<HTMLElement> & {
   tabIndex?: number;
   variant?: ButtonVariant;
   type?: "submit" | "button" | "reset";
+  textAlign?: "left" | "center" | "right";
   size?: ButtonSize;
   component?: ElementType;
   href?: string;
@@ -32,6 +33,7 @@ export const Button = memo(
     className,
     href,
     text,
+    textAlign = "left",
     borderWidth,
     children,
     component: Component = href ? "a" : "button",
@@ -51,7 +53,13 @@ export const Button = memo(
         s[size]
       )}
     >
-      {text ? <Typography variant="bodySm">{text}</Typography> : children}
+      {text ? (
+        <Typography variant="bodySm" align={textAlign}>
+          {text}
+        </Typography>
+      ) : (
+        children
+      )}
     </Component>
   )
 );
