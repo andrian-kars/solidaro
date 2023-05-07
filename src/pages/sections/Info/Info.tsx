@@ -1,5 +1,6 @@
 import { InfoCard } from "@/components";
 import { Button, Flex, Typography } from "@/components/common";
+import { info } from "@/constants";
 import cn from "classnames";
 import { useTranslation } from "next-i18next";
 import { memo } from "react";
@@ -24,8 +25,8 @@ export const Info = memo(({ className, num }: InfoTypes) => {
             {t("Cards heading")}
           </Typography>
           <Flex className={s.cards}>
-            <InfoCard header={t("Card 1")} value="1" />
-            <InfoCard header={t("Card 2")} value="5" />
+            <InfoCard header={t("Card 1")} value={info.clientsHelped} />
+            <InfoCard header={t("Card 2")} value={info.appsDevelepoed} />
             <InfoCard header={t("Card 3")} value="0" />
             <InfoCard header={t("Card 4")} value="1" />
           </Flex>

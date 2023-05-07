@@ -1,6 +1,11 @@
 import col from "@/styles/colors.module.scss";
 import vars from "@/styles/variables.module.scss";
 
+export const info = {
+  clientsHelped: "1",
+  appsDevelepoed: "5",
+};
+
 export const breakpoints = {
   biggerMobile: Number(vars.biggerMobile.slice(0, -2)),
   tablet: Number(vars.tablet.slice(0, -2)),
