@@ -1,0 +1,13 @@
+@use "@/styles/variables.module" as var;
+
+.text {
+  color: var(--dusk-storm-color) !important;
+  transition: 0.3s;
+
+  &:hover,
+  &:focus,
+  &:active,
+  & .active {
+    opacity: 0.8;
+  }
+}

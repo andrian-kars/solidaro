@@ -43,7 +43,7 @@ export const Button = memo(
       {...other}
       style={{ borderWidth }}
       href={href}
-      tabIndex={tabIndex}
+      tabIndex={tabIndex || 0}
       className={cn(
         s.button,
         active && s.active,
