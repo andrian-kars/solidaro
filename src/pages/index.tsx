@@ -2,7 +2,15 @@ import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";
 import ReactFullpage from "@fullpage/react-fullpage";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Info, Landing, Service } from "./sections";
+import {
+  Info,
+  Landing,
+  Questions,
+  Schedule,
+  Service,
+  Team,
+  Testimonials,
+} from "./sections";
 
 const SEL = "page-section";
 
@@ -20,18 +28,21 @@ export default function Home() {
         "landing",
         "info",
         "service",
-        "fourthPage",
+        "team",
+        "testimonials",
         "schedule",
-        "sixthPage",
+        "questions",
       ]}
       sectionSelector={`.${SEL}`}
       render={() => (
         <ReactFullpage.Wrapper>
           <Landing className={SEL} />
           <Info className={SEL} />
-          {[0, 1, 2, 3, 4, 5, 6, 7].map((key) => (
-            <Service key={key} className={SEL} num={key} />
-          ))}
+          <Service className={SEL} />
+          <Team className={SEL} />
+          <Testimonials className={SEL} />
+          <Schedule className={SEL} />
+          <Questions className={SEL} />
         </ReactFullpage.Wrapper>
       )}
     ></ReactFullpage>

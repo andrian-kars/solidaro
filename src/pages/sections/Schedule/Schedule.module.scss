@@ -1,0 +1,16 @@
+@use "@/styles/variables.module" as var;
+
+.container {
+  background-image: url("./../../../../public/images/initial/schedule.jpg");
+}
+
+.content {
+  @media (min-width: var.$tablet) {
+  }
+
+  @media (min-width: var.$bigger-tablet) {
+  }
+
+  @media (min-width: var.$desktop) {
+  }
+}
