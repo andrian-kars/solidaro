@@ -35,7 +35,7 @@ a:visited {
 
 .layout {
   margin: 0 auto;
-  padding: 0 var(--layout) var(--layout);
+  padding: 80px var(--layout);
 
   @media (min-width: var.$bigger-mobile) {
     width: 480px;
@@ -58,6 +58,30 @@ a:visited {
   }
 }
 
+.pt {
+  padding-top: 5px;
+}
+
+.pt-1 {
+  padding-top: 10px;
+}
+
+.pt-2 {
+  padding-top: var(--layout);
+}
+
+.pt-3 {
+  padding-top: calc(var(--layout) * 2);
+}
+
+.pt-4 {
+  padding-top: calc(var(--layout) * 3);
+}
+
+.pt-5 {
+  padding-top: calc(var(--layout) * 4);
+}
+
 .pb {
   padding-bottom: 5px;
 }
@@ -68,6 +92,18 @@ a:visited {
 
 .pb-2 {
   padding-bottom: var(--layout);
+}
+
+.pb-3 {
+  padding-bottom: calc(var(--layout) * 2);
+}
+
+.pb-4 {
+  padding-bottom: calc(var(--layout) * 3);
+}
+
+.pb-5 {
+  padding-bottom: calc(var(--layout) * 4);
 }
 
 .pr {
