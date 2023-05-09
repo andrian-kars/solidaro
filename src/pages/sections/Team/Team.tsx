@@ -11,14 +11,19 @@ type TeamTypes = {
 };
 
 export const Team = memo(({ className }: TeamTypes) => {
-  const { t } = useTranslation(["initial", "common"]);
+  const { t } = useTranslation(["initial", "common", "team"]);
 
   return (
     <Flex as="section" className={cn(s.container, className)}>
       <Flex justifyContent="center" className={cn(s.content, "layout")}>
         <Flex justifyContent="center" className={s.cards}>
-          {team.map((member) => (
-            <TeamCard key={member.name} teamMember={member} />
+          {team.map(({ name, job, photo }) => (
+            <TeamCard
+              key={name}
+              name={t(name, { ns: "team" })}
+              job={t(job, { ns: "team" })}
+              photo={photo}
+            />
           ))}
         </Flex>
         <Flex flexDirection="column" gap="var(--layout)" className={s.text}>

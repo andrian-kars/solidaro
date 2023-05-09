@@ -4,7 +4,7 @@ import AndrianKarsanashvili from "./andrian-karsanashvili.png";
 export const team = [
   {
     name: "Andrian Karsanashvili",
-    job: "Chief Technology Officer",
+    job: "Andrian Karsanashvili job",
     photo: AndrianKarsanashvili,
   },
   {
