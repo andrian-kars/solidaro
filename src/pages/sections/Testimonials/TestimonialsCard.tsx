@@ -28,12 +28,12 @@ export const TestimonialsCard = memo(
         <Flex className={s.line} />
         <Flex justifyContent="space-between">
           <Flex flexDirection="column" gap="5px">
-            <Typography variant="h3">{name}</Typography>
+            <Typography variant="h3">{t(name)}</Typography>
             <Typography variant="bodySm" color="blue">
-              {job}
+              {t(job)}
             </Typography>
           </Flex>
-          <Image src={photo} alt={name} width={56} height={56} />
+          <Image src={photo} alt={t(name)} width={56} height={56} />
         </Flex>
       </Flex>
     );

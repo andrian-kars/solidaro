@@ -47,7 +47,7 @@ export const testimonials = [
   {
     text: "Andrian Karsanashvili testimonial",
     name: "Andrian Karsanashvili",
-    job: "Senior Software Engineer",
+    job: "Andrian Karsanashvili job",
     website: "https://andrian-kars.com/",
     photo: AndrianKarsanashvili,
   },
