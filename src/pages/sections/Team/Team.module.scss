@@ -2,15 +2,73 @@
 
 .container {
   background-image: url("./../../../../public/images/initial/Team.jpg");
+
+  &::before {
+    opacity: 0.5;
+  }
 }
 
 .content {
-  @media (min-width: var.$tablet) {
+  flex-direction: column-reverse;
+  gap: 20px;
+
+  @media (min-width: 470px) {
+    gap: 60px;
   }
 
   @media (min-width: var.$bigger-tablet) {
+    flex-direction: row;
+  }
+}
+
+.text {
+  align-items: center;
+  text-align: center;
+
+  @media (min-width: var.$bigger-tablet) {
+    align-items: flex-start;
+    text-align: left;
+    padding-right: 50px;
   }
 
   @media (min-width: var.$desktop) {
+    width: 500px;
+  }
+}
+
+.cards {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  @media (min-width: 470px) {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+}
+
+.card {
+  width: 200px;
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--alabaster-color);
+    margin-bottom: 5px;
+  }
+
+  @media (min-width: var.$tablet) {
+    width: 225px;
+    border-width: 3px;
+
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  @media (min-width: var.$desktop) {
+    width: 250px;
   }
 }
