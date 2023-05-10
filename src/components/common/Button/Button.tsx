@@ -1,4 +1,5 @@
 import cn from "classnames";
+import Link from "next/link";
 import { ElementType, HTMLAttributes, memo } from "react";
 import { Typography } from "../Typography/Typography";
 import s from "./Button.module.scss";
@@ -36,7 +37,7 @@ export const Button = memo(
     textAlign = "left",
     borderWidth,
     children,
-    component: Component = href ? "a" : "button",
+    component: Component = href ? Link : "button",
     ...other
   }: ButtonTypes) => (
     <Component

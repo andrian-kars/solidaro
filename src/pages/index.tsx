@@ -6,7 +6,6 @@ import {
   Info,
   Landing,
   Questions,
-  Schedule,
   Service,
   Team,
   Testimonials,
@@ -30,7 +29,6 @@ export default function Home() {
         "service",
         "team",
         "testimonials",
-        "schedule",
         "questions",
       ]}
       sectionSelector={`.${SEL}`}
@@ -41,7 +39,6 @@ export default function Home() {
           <Service className={SEL} />
           <Team className={SEL} />
           <Testimonials className={SEL} />
-          <Schedule className={SEL} />
           <Questions className={SEL} />
         </ReactFullpage.Wrapper>
       )}

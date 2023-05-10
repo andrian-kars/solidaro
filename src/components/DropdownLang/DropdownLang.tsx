@@ -9,8 +9,9 @@ import { Typography } from "../common/Typography/Typography";
 import s from "./DropdownLang.module.scss";
 
 export const DropdownLang = memo(() => {
-  const { locales, locale, push } = useRouter();
+  const { locales, locale, push, query, pathname } = useRouter();
   const [localLang, setLocalLang] = useLocalStorage("lang", "");
+  const [stopInitialLang, setStopInitialLang] = useLocalStorage("", "");
   const [isDropdownOpened, setIsDropdownOpened] = useState(false);
 
   function handleDropdownLangClick() {
@@ -28,10 +29,18 @@ export const DropdownLang = memo(() => {
   }
 
   useEffect(() => {
-    localLang &&
-      localLang !== locale &&
-      push("/", undefined, { locale: localLang });
-  }, [locale, localLang, push]);
+    if (localLang) {
+      setStopInitialLang("stop");
+    }
+
+    if (!stopInitialLang && localLang && localLang !== locale) {
+      push(pathname, undefined, { locale: localLang });
+    }
+
+    return () => {
+      setStopInitialLang("");
+    };
+  }, [localLang]);
 
   return (
     <Button
@@ -56,7 +65,7 @@ export const DropdownLang = memo(() => {
             .filter((el) => el !== locale)
             .map((loc) => (
               <li key={loc} onClick={() => handleItemClick(loc)} tabIndex={0}>
-                <Link href="/" locale={loc}>
+                <Link href={{ pathname, query }} locale={loc}>
                   <Typography align="right" variant="subHeader">
                     {selectCountrlyLang(loc)}
                   </Typography>

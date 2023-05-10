@@ -10,7 +10,7 @@ const headerFont = Ubuntu({
 });
 
 const defaultFont = Open_Sans({
-  weight: ["400", "700"],
+  weight: ["400"],
   subsets: ["latin"],
 });
 

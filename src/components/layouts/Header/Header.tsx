@@ -5,12 +5,14 @@ import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { memo } from "react";
 import s from "./Header.module.scss";
 
 const HEADER_GAP = "10px";
 
 export const Header = memo(() => {
+  const { pathname } = useRouter();
   const { width } = useWindowDimensions();
   const { t } = useTranslation();
 
@@ -33,9 +35,12 @@ export const Header = memo(() => {
         </Typography>
       </Flex>
       <Flex gap={HEADER_GAP} alignItems="center">
-        {width >= 400 && (
-          <Button href="#schedule" text={t("Schedule a call")} />
-        )}
+        {width >= 400 &&
+          (pathname.length < 4 ? (
+            <Button href={"./schedule"} text={t("Schedule a call")} />
+          ) : (
+            <Button href={"./"} text={t("Go back")} />
+          ))}
         <DropdownLang />
       </Flex>
     </Flex>
