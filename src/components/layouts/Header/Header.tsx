@@ -5,6 +5,7 @@ import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { memo } from "react";
 import s from "./Header.module.scss";
@@ -25,7 +26,9 @@ export const Header = memo(() => {
     >
       <Flex alignItems="center" gap={HEADER_GAP}>
         {width >= breakpoints.biggerMobile && (
-          <Image src={logoPic} alt={t("Logo picture")} width={51} />
+          <Link href="/">
+            <Image src={logoPic} alt={t("Logo picture")} width={51} />
+          </Link>
         )}
         <Typography variant="h1" componentProp="h1">
           Solidaro
