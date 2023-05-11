@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { ReactNode } from "react";
 import { Footer } from "./Footer/Footer";
 import { Header } from "./Header/Header";
@@ -7,10 +8,16 @@ type LayoutProps = {
   children: ReactNode;
 };
 
-export const Layout = ({ children }: LayoutProps) => (
-  <>
-    <Header />
-    <main className={s.layout}>{children}</main>
-    <Footer />
-  </>
-);
+export const Layout = ({ children }: LayoutProps) => {
+  const { asPath } = useRouter();
+
+  const showFooter = asPath.includes("schedule");
+
+  return (
+    <>
+      <Header />
+      <main className={s.layout}>{children}</main>
+      {showFooter && <Footer />}
+    </>
+  );
+};

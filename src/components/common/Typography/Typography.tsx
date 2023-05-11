@@ -33,8 +33,7 @@ type TypographyProps = HTMLAttributes<HTMLElement> & {
   // /** Controls the display type */
   // inline?: boolean;
 
-  // /** Controls the flex display attributes */
-  // flex?: boolean;
+  uppercase?: boolean;
 
   // /** If true, the text will not wrap, but instead will truncate with a text overflow ellipsis. Note that text overflow can only happen with block or inline-block level elements (the element needs to have a width in order to overflow). */
   // noWrap?: boolean;
@@ -57,6 +56,7 @@ export const Typography = memo(
   ({
     componentProp: Component = "p",
     variant = "body",
+    uppercase,
     align,
     color,
     className,
@@ -68,7 +68,8 @@ export const Typography = memo(
       className={cn(
         className,
         variant.includes("h") ? headerFont.className : defaultFont.className,
-        s[variant]
+        s[variant],
+        uppercase && s.uppercase
       )}
     />
   )

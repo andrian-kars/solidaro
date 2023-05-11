@@ -1,7 +1,7 @@
 @use "@/styles/variables.module" as var;
 
 .text {
-  color: var(--dusk-storm-color) !important;
+  color: var(--dusk-storm-color);
   transition: 0.3s;
 
   &:hover,

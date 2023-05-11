@@ -1,8 +1,88 @@
+@use "@/styles/variables.module" as var;
+
 .header {
-  padding: var(--layout);
+  padding: 7px var(--layout);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 69;
+  z-index: 169;
+
+  background-color: rgba($color: #000000, $alpha: 0.4);
+
+  @media (min-width: var.$bigger-tablet) {
+    background-color: transparent;
+    padding: var(--layout);
+  }
+}
+
+.nav {
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: var.$bigger-tablet) {
+    flex-direction: row;
+    gap: var(--layout);
+  }
+}
+
+.menuBtn {
+  display: block;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menuBtn::before,
+.menuBtn::after {
+  content: " ";
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #e0e0e0;
+  margin-bottom: 4px;
+  transition: 0.3s;
+}
+
+.menuBtn::after {
+  content: "";
+  margin-left: auto;
+  margin-bottom: 0;
+  width: 16px;
+}
+
+.line {
+  background-color: #e0e0e0;
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin-bottom: 4px;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.active {
+  .line {
+    opacity: 0;
+    transition: 0s;
+  }
+
+  &::after {
+    width: 24px;
+    transform: translateY(-6px) rotate(-135deg);
+  }
+
+  &::before {
+    transform: translateY(6px) rotate(135deg);
+  }
+}
+
+.modal {
+  height: 100%;
+
+  &Content {
+    height: 500px;
+  }
 }

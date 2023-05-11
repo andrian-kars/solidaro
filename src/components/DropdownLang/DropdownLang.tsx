@@ -1,4 +1,5 @@
-import { useLocalStorage } from "@/hooks";
+import { breakpoints } from "@/constants";
+import { useLocalStorage, useWindowDimensions } from "@/hooks";
 import cn from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,12 +9,18 @@ import { Flex } from "../common/Flex/Flex";
 import { Typography } from "../common/Typography/Typography";
 import s from "./DropdownLang.module.scss";
 
-export const DropdownLang = memo(() => {
+type DropdownLangTypes = {
+  onClick?: () => void;
+};
+
+export const DropdownLang = memo(({ onClick }: DropdownLangTypes) => {
   const { locales, locale, push, query, pathname } = useRouter();
+  const { width } = useWindowDimensions();
   const [localLang, setLocalLang] = useLocalStorage("lang", "");
   const [stopInitialLang, setStopInitialLang] = useLocalStorage("", "");
   const [isDropdownOpened, setIsDropdownOpened] = useState(false);
 
+  const isMobile = width < breakpoints.biggerTablet;
   function handleDropdownLangClick() {
     setIsDropdownOpened((prev) => !prev);
   }
@@ -50,8 +57,10 @@ export const DropdownLang = memo(() => {
       onClick={handleDropdownLangClick}
       onBlur={handleBlur}
     >
-      {/* @ts-ignore */}
-      <Typography variant="subHeader">{selectFlag(locale)}</Typography>
+      <Typography variant={isMobile ? "h3" : "subHeader"}>
+        {/* @ts-ignore */}
+        {selectFlag(locale)}
+      </Typography>
       <DropdownLangSvg />
       {isDropdownOpened && (
         <Flex
@@ -65,8 +74,11 @@ export const DropdownLang = memo(() => {
             .filter((el) => el !== locale)
             .map((loc) => (
               <li key={loc} onClick={() => handleItemClick(loc)} tabIndex={0}>
-                <Link href={{ pathname, query }} locale={loc}>
-                  <Typography align="right" variant="subHeader">
+                <Link href={{ pathname, query }} locale={loc} onClick={onClick}>
+                  <Typography
+                    align="right"
+                    variant={isMobile ? "h3" : "subHeader"}
+                  >
                     {selectCountrlyLang(loc)}
                   </Typography>
                 </Link>

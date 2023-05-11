@@ -1,7 +1,6 @@
 @use "@/styles/variables.module" as var;
 
 .footer {
-  display: none !important;
   margin: 0;
   padding: 20px 30px;
   position: fixed;
@@ -9,8 +8,9 @@
   left: 0;
   right: 0;
   z-index: 69;
+  background-color: rgba($color: #000000, $alpha: 0.8);
 
   @media (min-width: var.$desktop) {
-    display: flex !important;
+    background-color: transparent;
   }
 }
