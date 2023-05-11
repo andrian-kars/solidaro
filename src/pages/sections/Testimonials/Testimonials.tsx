@@ -48,7 +48,6 @@ export const Testimonials = memo(({ className }: TestimonialsTypes) => {
 
   useEffect(() => {
     if (!testimonialsToRender.length) {
-      console.log("initialTistimonials", testimonialsToRender.length);
       setTestimonialsToRender(testimonials.slice(0, sliceTestimonials));
     }
   }, [width]);
