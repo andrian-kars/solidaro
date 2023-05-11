@@ -11,8 +11,6 @@ import { TestimonialsCard } from "./TestimonialsCard";
 const { biggerTablet, tablet } = breakpoints;
 
 function sliceAddTestimonials(width: number) {
-  // console.log("trigger", width);
-
   let sliceTestimonials = 0;
   let addTestimonials = 0;
 

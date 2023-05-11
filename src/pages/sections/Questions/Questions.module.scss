@@ -16,9 +16,14 @@
   @media (min-width: var.$tablet) {
   }
 
-  @media (min-width: var.$bigger-tablet) {
-  }
-
   @media (min-width: var.$desktop) {
   }
+}
+
+.loadMore {
+  margin: 20px auto 0;
+}
+
+.desktopItem {
+  width: 32%;
 }
