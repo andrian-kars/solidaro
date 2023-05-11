@@ -6,12 +6,13 @@
   align-items: center;
 
   min-height: calc(100vh - 60px);
-  background-image: url("./../../../public/images/initial/schedule.jpg");
+  background-image: url("./../../../public/images/initial/schedule-mobile.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   @media (min-width: var.$tablet) {
+    background-image: url("./../../../public/images/initial/schedule.jpg");
     min-height: 100vh;
     padding-top: 0;
     flex-direction: column;

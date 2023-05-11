@@ -1,7 +1,15 @@
 @use "@/styles/variables.module" as var;
 
 .container {
-  background-image: url("./../../../../public/images/initial/Team.jpg");
+  background-image: url("./../../../../public/images/initial/team-mobile.jpg");
+
+  @media (min-width: var.$tablet) {
+    background-image: url("./../../../../public/images/initial/team-tablet.jpg");
+  }
+
+  @media (min-width: var.$desktop) {
+    background-image: url("./../../../../public/images/initial/team-desktop.jpg");
+  }
 
   &::before {
     opacity: 0.5;

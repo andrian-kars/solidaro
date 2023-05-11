@@ -1,7 +1,11 @@
 @use "@/styles/variables.module" as var;
 
 .container {
-  background-image: url("./../../../../public/images/initial/service.jpg");
+  background-image: url("./../../../../public/images/initial/service-mobile.jpg");
+
+  @media (min-width: var.$tablet) {
+    background-image: url("./../../../../public/images/initial/service.jpg");
+  }
 }
 
 .content {
@@ -30,8 +34,5 @@
   @media (min-width: var.$bigger-tablet) {
     gap: 70px;
     flex-direction: row;
-  }
-
-  @media (min-width: var.$desktop) {
   }
 }

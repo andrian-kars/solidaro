@@ -1,7 +1,11 @@
 @use "@/styles/variables.module" as var;
 
 .container {
-  background-image: url("./../../../../public/images/initial/testimonials.jpg");
+  background-image: url("./../../../../public/images/initial/testimonials-mobile.jpg");
+
+  @media (min-width: var.$tablet) {
+    background-image: url("./../../../../public/images/initial/testimonials.jpg");
+  }
 }
 
 .subText {

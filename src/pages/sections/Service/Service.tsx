@@ -32,7 +32,7 @@ export const Service = memo(({ className }: ServiceTypes) => {
               </Typography>
             </Flex>
           ))}
-          <Button borderWidth={2} href="#schedule">
+          <Button borderWidth={2} href="/schedule">
             <Typography variant="bodyBg" align="center">
               {t("Speak to team", { ns: "common" })}
             </Typography>

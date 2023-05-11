@@ -1,7 +1,15 @@
 @use "@/styles/variables.module" as var;
 
 .container {
-  background-image: url("./../../../../public/images/initial/landing.jpg");
+  background-image: url("./../../../../public/images/initial/landing-mobile.jpg");
+
+  @media (min-width: var.$tablet) {
+    background-image: url("./../../../../public/images/initial/landing-tablet.jpg");
+  }
+
+  @media (min-width: var.$desktop) {
+    background-image: url("./../../../../public/images/initial/landing-desktop.jpg");
+  }
 }
 
 .content {

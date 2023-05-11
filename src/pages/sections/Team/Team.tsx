@@ -30,7 +30,7 @@ export const Team = memo(({ className }: TeamTypes) => {
           <Typography variant="h1">{t("Team heading")}</Typography>
           <Typography>{t("Team p 1")}</Typography>
           <Typography className="pb-1">{t("Team p 2")}</Typography>
-          <Button borderWidth={2} href="#schedule">
+          <Button borderWidth={2} href="/schedule">
             <Typography variant="bodyBg" align="center">
               {t("Speak to team", { ns: "common" })}
             </Typography>

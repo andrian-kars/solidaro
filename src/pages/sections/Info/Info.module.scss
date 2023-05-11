@@ -1,7 +1,19 @@
 @use "@/styles/variables.module" as var;
 
 .container {
-  background-image: url("./../../../../public/images/initial/info.jpg");
+  background-image: url("./../../../../public/images/initial/info-mobile.jpg");
+
+  @media (min-width: var.$tablet) {
+    background-image: url("./../../../../public/images/initial/info-tablet.jpg");
+  }
+
+  @media (min-width: var.$desktop) {
+    background-image: url("./../../../../public/images/initial/info-desktop.jpg");
+  }
+
+  &::before {
+    opacity: 0.4;
+  }
 }
 
 .content {

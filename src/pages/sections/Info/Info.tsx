@@ -59,7 +59,7 @@ export const Info = memo(({ className }: InfoTypes) => {
           >
             {t("Info meeting")}
           </Typography>
-          <Button borderWidth={2} href="#schedule">
+          <Button borderWidth={2} href="/schedule">
             <Typography variant="bodyBg" align="center">
               {t("Speak to team", { ns: "common" })}
             </Typography>
