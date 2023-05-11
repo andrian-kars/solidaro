@@ -1,11 +1,12 @@
 import { CustomLink, Flex, Typography } from "@/components/common";
 import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { memo } from "react";
 import s from "./Header.module.scss";
 
-const NAVIGATION = ["info", "sevice", "team", "testimonials", "questions"];
+const NAVIGATION = ["info", "service", "team", "testimonials", "questions"];
 
 type NavigationTypes = {
   onClick?: () => void;
@@ -14,6 +15,7 @@ type NavigationTypes = {
 export const Navigation = memo(({ onClick }: NavigationTypes) => {
   const { width } = useWindowDimensions();
   const { pathname } = useRouter();
+  const { t } = useTranslation();
 
   const isMobile = width < breakpoints.biggerTablet;
   const isInitialPage = pathname.length < 4;
@@ -30,7 +32,7 @@ export const Navigation = memo(({ onClick }: NavigationTypes) => {
           onClick={onClick}
         >
           <Typography uppercase variant={isMobile ? "h3" : "h4"}>
-            {nav}
+            {t(nav)}
           </Typography>
         </CustomLink>
       ))}
