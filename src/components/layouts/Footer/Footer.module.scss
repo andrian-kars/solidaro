@@ -1,6 +1,16 @@
-.footer {
-  padding: var(--layout);
+@use "@/styles/variables.module" as var;
 
-  h1 {
+.footer {
+  display: none !important;
+  margin: 0;
+  padding: 20px 30px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 69;
+
+  @media (min-width: var.$desktop) {
+    display: flex !important;
   }
 }
