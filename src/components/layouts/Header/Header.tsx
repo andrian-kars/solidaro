@@ -17,6 +17,10 @@ export const Header = memo(() => {
   const { width } = useWindowDimensions();
   const { t } = useTranslation();
 
+  const isInitialPage = pathname.length < 4;
+  const LinkComp = isInitialPage ? "a" : Link;
+  const linkHref = isInitialPage ? "#landing" : "/";
+
   return (
     <Flex
       as="header"
@@ -26,9 +30,9 @@ export const Header = memo(() => {
     >
       <Flex alignItems="center" gap={HEADER_GAP}>
         {width >= breakpoints.biggerMobile && (
-          <Link href="/">
+          <LinkComp href={linkHref}>
             <Image src={logoPic} alt={t("Logo picture")} width={51} />
-          </Link>
+          </LinkComp>
         )}
         <Typography variant="h1" componentProp="h1">
           Solidaro
@@ -39,7 +43,7 @@ export const Header = memo(() => {
       </Flex>
       <Flex gap={HEADER_GAP} alignItems="center">
         {width >= 400 &&
-          (pathname.length < 4 ? (
+          (isInitialPage ? (
             <Button href={"./schedule"} text={t("Schedule a call")} />
           ) : (
             <Button href={"./"} text={t("Go back")} />
