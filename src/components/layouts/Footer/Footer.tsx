@@ -1,14 +1,13 @@
 import { Flex, Typography } from "@/components/common";
-import cn from "classnames";
+import { useTranslation } from "next-i18next";
 import { memo } from "react";
-import { useTranslation } from "react-i18next";
 import s from "./Footer.module.scss";
 
 export const Footer = memo(() => {
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation();
 
   return (
-    <Flex as="footer" className={cn(s.footer, "layout")}>
+    <Flex as="footer" className={s.footer}>
       <Typography>{t("Footer copyright")}</Typography>
     </Flex>
   );
