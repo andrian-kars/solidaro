@@ -69,6 +69,7 @@ export const QuestionsMobile = memo(
         </Flex>
         {questionsToShow.length < questions.length && (
           <Button
+            ariaLabel={t("Load more", { ns: "common" })}
             onClick={handleLoadMore}
             text={t("Load more", { ns: "common" })}
             className={s.loadMore}

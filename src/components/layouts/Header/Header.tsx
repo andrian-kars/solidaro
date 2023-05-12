@@ -36,12 +36,14 @@ export const Header = memo(() => {
     <Flex gap={HEADER_GAP} alignItems="center">
       {isInitialPage ? (
         <Button
+          ariaLabel={t("Schedule a call")}
           onClick={handleMobileMenuClose}
           href={"./schedule"}
           text={t("Schedule a call")}
         />
       ) : (
         <Button
+          ariaLabel={t("Go back")}
           onClick={handleMobileMenuClose}
           href={"./"}
           text={t("Go back")}

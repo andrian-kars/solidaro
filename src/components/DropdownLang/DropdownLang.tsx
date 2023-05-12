@@ -1,6 +1,7 @@
 import { breakpoints } from "@/constants";
 import { useLocalStorage, useWindowDimensions } from "@/hooks";
 import cn from "classnames";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { memo, useEffect, useState } from "react";
@@ -16,6 +17,8 @@ type DropdownLangTypes = {
 export const DropdownLang = memo(({ onClick }: DropdownLangTypes) => {
   const { locales, locale, push, query, pathname } = useRouter();
   const { width } = useWindowDimensions();
+  const { t } = useTranslation();
+
   const [localLang, setLocalLang] = useLocalStorage("lang", "");
   const [stopInitialLang, setStopInitialLang] = useLocalStorage("", "");
   const [isDropdownOpened, setIsDropdownOpened] = useState(false);
@@ -51,6 +54,7 @@ export const DropdownLang = memo(({ onClick }: DropdownLangTypes) => {
 
   return (
     <Button
+      ariaLabel={t("lang")}
       className={cn(s.button, isDropdownOpened && s.active)}
       variant="secondary"
       active={isDropdownOpened}

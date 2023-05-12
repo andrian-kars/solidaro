@@ -21,6 +21,7 @@ type ButtonTypes = HTMLAttributes<HTMLElement> & {
   component?: ElementType;
   href?: string;
   text?: string;
+  ariaLabel: string;
 };
 
 export const Button = memo(
@@ -36,6 +37,7 @@ export const Button = memo(
     text,
     textAlign = "left",
     borderWidth,
+    ariaLabel,
     children,
     component: Component = href ? Link : "button",
     ...other
@@ -45,6 +47,8 @@ export const Button = memo(
       style={{ borderWidth }}
       href={href}
       tabIndex={tabIndex || 0}
+      title={ariaLabel}
+      aria-label={ariaLabel}
       className={cn(
         s.button,
         active && s.active,

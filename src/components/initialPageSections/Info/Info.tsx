@@ -59,7 +59,11 @@ export const Info = memo(({ className }: InfoTypes) => {
           >
             {t("Info meeting")}
           </Typography>
-          <Button borderWidth={2} href="/schedule">
+          <Button
+            borderWidth={2}
+            href="/schedule"
+            ariaLabel={t("Speak to team", { ns: "common" })}
+          >
             <Typography variant="bodyBg" align="center">
               {t("Speak to team", { ns: "common" })}
             </Typography>

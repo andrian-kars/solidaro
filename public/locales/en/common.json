@@ -12,5 +12,7 @@
   "service": "sevice",
   "team": "team",
   "testimonials": "testimonials",
-  "questions": "questions"
+  "questions": "questions",
+  "lang": "Select language",
+  "Open mobile menu": "Open menu"
 }

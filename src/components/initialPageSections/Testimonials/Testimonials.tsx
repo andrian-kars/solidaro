@@ -90,6 +90,7 @@ export const Testimonials = memo(({ className }: TestimonialsTypes) => {
         {testimonialsToRender.length < testimonials.length && (
           <Button
             onClick={handleLoadMore}
+            ariaLabel={t("Load more", { ns: "common" })}
             text={t("Load more", { ns: "common" })}
           />
         )}

@@ -48,7 +48,7 @@ export const Questions = memo(({ className }: QuestionsTypes) => {
           <Link href="mailto: info@solidaro.com"> info@solidaro.com</Link>
         </Typography>
         <Flex
-          as="ul"
+          as={width >= biggerTablet ? "ul" : "div"}
           gap="var(--layout)"
           flexDirection={width >= biggerTablet ? "row" : "column"}
           flexWrap={width >= biggerTablet ? "wrap" : "nowrap"}

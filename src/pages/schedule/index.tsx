@@ -30,20 +30,22 @@ const Schedule = () => {
             alt={t("Andrian Karsanashvili", { ns: "team" })}
             className={s.image}
           />
-          <Typography variant="subHeader">
+          <Typography variant="subHeader" componentProp="h1">
             {t("Schedule sub heading")}
           </Typography>
-          <Typography className="pb-2" variant="h1">
+          <Typography className="pb-2" variant="h1" componentProp="h2">
             {t("Schedule heading")}
           </Typography>
           <Flex flexDirection="column" gap="15px">
-            <Typography variant="h2" className="pb-1">
+            <Typography variant="h2" className="pb-1" componentProp="h3">
               {t("Schedule points heading")}
             </Typography>
             {[1, 2, 3, 4, 5, 6].map((num) => (
               <Flex key={num} alignItems="center" gap="var(--layout)">
                 <Icon type="true" />
-                <Typography>{t(`Schedule point ${num}`)}</Typography>
+                <Typography componentProp="h4">
+                  {t(`Schedule point ${num}`)}
+                </Typography>
               </Flex>
             ))}
           </Flex>
