@@ -1,7 +1,3 @@
-import { breakpoints } from "@/constants";
-import { useWindowDimensions } from "@/hooks";
-import ReactFullpage from "@fullpage/react-fullpage";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import {
   Info,
   Landing,
@@ -9,7 +5,11 @@ import {
   Service,
   Team,
   Testimonials,
-} from "./sections";
+} from "@/components/initialPageSections";
+import { breakpoints } from "@/constants";
+import { useWindowDimensions } from "@/hooks";
+import ReactFullpage from "@fullpage/react-fullpage";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const SEL = "page-section";
 
