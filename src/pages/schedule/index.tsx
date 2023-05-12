@@ -14,7 +14,7 @@ const Schedule = () => {
 
   return (
     <>
-      <CustomHead title={t("title")} />
+      <CustomHead title={t("title")} description={t("description")} />
       <Flex className={cn(s.container)}>
         <Flex
           flexDirection="column"

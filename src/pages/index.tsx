@@ -22,7 +22,11 @@ export default function Home() {
 
   return (
     <>
-      <CustomHead title={t("title")} />
+      <CustomHead
+        title={t("title")}
+        description={t("description")}
+        keywords={t("keywords")}
+      />
       <ReactFullpage
         licenseKey="L4BPH-Q0M78-2HMK7-84MBJ-ZXRZN"
         credits={{ enabled: false }}
