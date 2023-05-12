@@ -25,7 +25,7 @@ export const Navigation = memo(({ onClick }: NavigationTypes) => {
       {NAVIGATION.map((nav) => (
         <CustomLink
           color="white"
-          def
+          def={isInitialPage}
           href={isInitialPage ? `#${nav}` : `/#${nav}`}
           key={nav}
           className={s.navItem}
