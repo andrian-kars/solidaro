@@ -1,4 +1,4 @@
-import logoPic from "@/../public/images/initial/logoPic.png";
+import logoPic from "@/../public/images/logo.png";
 import { Flex, Typography } from "@/components/common";
 import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";

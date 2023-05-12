@@ -1,4 +1,4 @@
-import logoPic from "@/../public/images/initial/logoPic.png";
+import logoPic from "@/../public/images/logo.png";
 import { DropdownLang } from "@/components";
 import { Button, Flex, Typography } from "@/components/common";
 import { breakpoints } from "@/constants";
