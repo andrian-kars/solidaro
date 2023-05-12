@@ -1,3 +1,4 @@
+import { CustomHead } from "@/components";
 import {
   Info,
   Landing,
@@ -9,6 +10,7 @@ import {
 import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";
 import ReactFullpage from "@fullpage/react-fullpage";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const SEL = "page-section";
@@ -16,33 +18,37 @@ const SEL = "page-section";
 // This default export is required
 export default function Home() {
   const { width } = useWindowDimensions();
+  const { t } = useTranslation();
 
   return (
-    <ReactFullpage
-      licenseKey="L4BPH-Q0M78-2HMK7-84MBJ-ZXRZN"
-      credits={{ enabled: false }}
-      navigation={width >= breakpoints.tablet}
-      scrollingSpeed={1000}
-      anchors={[
-        "landing",
-        "info",
-        "service",
-        "team",
-        "testimonials",
-        "questions",
-      ]}
-      sectionSelector={`.${SEL}`}
-      render={() => (
-        <ReactFullpage.Wrapper>
-          <Landing className={SEL} />
-          <Info className={SEL} />
-          <Service className={SEL} />
-          <Team className={SEL} />
-          <Testimonials className={SEL} />
-          <Questions className={SEL} />
-        </ReactFullpage.Wrapper>
-      )}
-    />
+    <>
+      <CustomHead title={t("title")} />
+      <ReactFullpage
+        licenseKey="L4BPH-Q0M78-2HMK7-84MBJ-ZXRZN"
+        credits={{ enabled: false }}
+        navigation={width >= breakpoints.tablet}
+        scrollingSpeed={1000}
+        anchors={[
+          "landing",
+          "info",
+          "service",
+          "team",
+          "testimonials",
+          "questions",
+        ]}
+        sectionSelector={`.${SEL}`}
+        render={() => (
+          <ReactFullpage.Wrapper>
+            <Landing className={SEL} />
+            <Info className={SEL} />
+            <Service className={SEL} />
+            <Team className={SEL} />
+            <Testimonials className={SEL} />
+            <Questions className={SEL} />
+          </ReactFullpage.Wrapper>
+        )}
+      />
+    </>
   );
 }
 
