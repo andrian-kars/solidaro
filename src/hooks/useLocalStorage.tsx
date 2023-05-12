@@ -28,6 +28,7 @@ export function useLocalStorage<T>(
       // Get from local storage by key
       const item = window.localStorage.getItem(key);
       // Parse stored json or if none return initialValue
+      // @ts-ignore
       return item ? parseJSON(item) : initialValue;
     } catch (error) {
       // If error also return initialValue
