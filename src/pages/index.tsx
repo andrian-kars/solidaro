@@ -42,7 +42,7 @@ export default function Home() {
           <Questions className={SEL} />
         </ReactFullpage.Wrapper>
       )}
-    ></ReactFullpage>
+    />
   );
 }
 
