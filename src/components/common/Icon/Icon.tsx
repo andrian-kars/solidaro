@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 type IconTypes = {
-  type: "true" | "false";
+  type: "true" | "false" | "ukraine";
 };
 
 export const Icon = memo(({ type }: IconTypes) => {
@@ -10,6 +10,8 @@ export const Icon = memo(({ type }: IconTypes) => {
       return <TrueSvg />;
     case "false":
       return <FalseSvg />;
+    case "ukraine":
+      return <UkraineSvg />;
     default:
       return <div>No such type supported</div>;
   }
@@ -49,5 +51,18 @@ const FalseSvg = () => (
     <circle cx="12" cy="12" r="10" />
     <line x1="15" x2="9" y1="9" y2="15" />
     <line x1="9" x2="15" y1="9" y2="15" />
+  </svg>
+);
+
+const UkraineSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="30px">
+    <path
+      fill="#005BBB"
+      d="M32 5H4C1.791 5 0 6.791 0 9v9h36V9c0-2.209-1.791-4-4-4z"
+    />
+    <path
+      fill="#FFD500"
+      d="M36 27c0 2.209-1.791 4-4 4H4c-2.209 0-4-1.791-4-4v-9h36v9z"
+    />
   </svg>
 );

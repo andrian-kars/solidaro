@@ -1,6 +1,6 @@
 import logoPic from "@/../public/images/logo.png";
 import { DropdownLang } from "@/components";
-import { Button, Flex, Typography } from "@/components/common";
+import { Button, Flex, Icon, Typography } from "@/components/common";
 import { breakpoints } from "@/constants";
 import { useWindowDimensions } from "@/hooks";
 import { useTranslation } from "next-i18next";
@@ -60,19 +60,17 @@ export const Header = memo(() => {
       alignItems="center"
       className={s.header}
     >
-      <Flex alignItems="center" gap={HEADER_GAP}>
+      <LinkComp
+        href={linkHref}
+        onClick={handleMobileMenuClose}
+        className={s.logoLink}
+      >
         {width >= breakpoints.biggerMobile && (
-          <LinkComp href={linkHref} onClick={handleMobileMenuClose}>
-            <Image src={logoPic} alt={t("Logo picture")} width={51} />
-          </LinkComp>
+          <Image src={logoPic} alt={t("Logo picture")} width={51} />
         )}
-        <Typography variant="h1" componentProp="h1">
-          Solidaro
-        </Typography>
-        <Typography variant="h1" componentProp="p">
-          🇺🇦
-        </Typography>
-      </Flex>
+        <Typography variant="h1">Solidaro</Typography>
+        {width >= breakpoints.biggerMobile && <Icon type="ukraine" />}
+      </LinkComp>
       {width >= breakpoints.biggerTablet && (
         <>
           <Navigation />
