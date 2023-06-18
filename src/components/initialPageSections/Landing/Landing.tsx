@@ -63,6 +63,7 @@ export const Landing = memo(({ className }: LandingTypes) => {
           <Flex gap={30} className={s.socials}>
             {SOCIALS.map(({ social, url }) => (
               <CustomLink href={url} target="_blank" key={social}>
+                {/* @ts-ignore */}
                 <Icon type={social} />
               </CustomLink>
             ))}
