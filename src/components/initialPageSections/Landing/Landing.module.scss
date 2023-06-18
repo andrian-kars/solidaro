@@ -42,3 +42,27 @@
     }
   }
 }
+
+.socials {
+  margin-top: 5px;
+
+  img {
+    margin: 0 !important;
+    height: 35px;
+    width: 35px;
+    opacity: 0.5;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus,
+    &:active,
+    & .active {
+      opacity: 1;
+    }
+
+    @media (min-width: var.$tablet) {
+      height: 40px;
+      width: 40px;
+    }
+  }
+}

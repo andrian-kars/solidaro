@@ -1,7 +1,21 @@
+import facebook from "@/../public/icons/facebook.svg";
+import instagram from "@/../public/icons/instagram.svg";
+import linkedin from "@/../public/icons/linkedin.svg";
+import twitter from "@/../public/icons/twitter.svg";
+import youtube from "@/../public/icons/youtube.svg";
+import Image from "next/image";
 import { memo } from "react";
 
 type IconTypes = {
-  type: "true" | "false" | "ukraine";
+  type:
+    | "true"
+    | "false"
+    | "ukraine"
+    | "youtube"
+    | "instagram"
+    | "linkedin"
+    | "facebook"
+    | "twitter";
 };
 
 export const Icon = memo(({ type }: IconTypes) => {
@@ -12,6 +26,16 @@ export const Icon = memo(({ type }: IconTypes) => {
       return <FalseSvg />;
     case "ukraine":
       return <UkraineSvg />;
+    case "youtube":
+      return <Image src={youtube} alt="youtube" />;
+    case "instagram":
+      return <Image src={instagram} alt="instagram" />;
+    case "linkedin":
+      return <Image src={linkedin} alt="linkedin" />;
+    case "facebook":
+      return <Image src={facebook} alt="facebook" />;
+    case "twitter":
+      return <Image src={twitter} alt="twitter" />;
     default:
       return <div>No such type supported</div>;
   }
