@@ -1,18 +1,14 @@
-import { Layout } from "@/components/layouts/Layout";
-import "@/styles/index.scss";
-import { Analytics } from "@vercel/analytics/react";
-import { appWithTranslation } from "next-i18next";
+import { SiteLayout } from "@/components/SiteLayout";
+import { getLocale } from "@/content";
+import "@fontsource-variable/manrope";
+import "@fontsource-variable/space-grotesk";
+import "@fontsource-variable/noto-sans-jp";
+import "@/styles/site.css";
 import type { AppProps } from "next/app";
-import "./style.scss";
+import { useRouter } from "next/router";
 
-const App = ({ Component, pageProps }: AppProps) => (
-  <>
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-    <Analytics />
-  </>
-);
-
-// This default export is required
-export default appWithTranslation(App);
+export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const locale = getLocale(pageProps.locale || router.locale);
+  return <SiteLayout locale={locale}><Component {...pageProps} locale={locale} /></SiteLayout>;
+}

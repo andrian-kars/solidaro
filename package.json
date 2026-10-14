@@ -1,32 +1,35 @@
 {
   "name": "solidaro",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@fullpage/react-fullpage": "^0.1.39",
-    "@types/node": "18.16.3",
-    "@types/react": "18.2.5",
-    "@types/react-dom": "18.2.3",
-    "@vercel/analytics": "^1.0.1",
-    "i18next": "^22.4.15",
-    "next": "13.3.4",
-    "next-i18next": "^13.2.2",
-    "react": "18.2.0",
-    "react-calendly": "^4.1.1",
-    "react-dom": "18.2.0",
-    "react-i18next": "^12.2.2",
-    "typescript": "5.0.4"
+    "@fontsource-variable/manrope": "5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.2.10",
+    "@fontsource-variable/noto-sans-jp": "^5.2.10",
+    "lucide-react": "1.55.0",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "classnames": "^2.3.2",
-    "eslint": "8.39.0",
-    "eslint-config-next": "13.3.4",
-    "sass": "^1.62.1"
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.64.0",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.0",
+    "typescript": "5.9.3"
   }
 }

@@ -1,9 +1,17 @@
-const { i18n } = require("./next-i18next.config");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  i18n: i18n,
+  poweredByHeader: false,
+  agentRules: false,
+  i18n: { locales: ["en", "uk", "de", "ja"], defaultLocale: "en" },
+  async headers() {
+    return [{ source: "/:path*", headers: [
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      { key: "X-Frame-Options", value: "DENY" },
+      { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+    ] }];
+  },
 };
 
 module.exports = nextConfig;
