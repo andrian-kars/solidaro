@@ -12,5 +12,5 @@ export default defineConfig({
     { name: "desktop", use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 1000 } } },
     { name: "mobile", use: { ...devices["iPhone 13"], defaultBrowserType: "chromium" } },
   ],
-  webServer: { command: "yarn start --port 3013", url: "http://localhost:3013", reuseExistingServer: false, timeout: 30000 },
+  webServer: { command: "node scripts/serve.mjs 3013", url: "http://localhost:3013/solidaro", reuseExistingServer: false, timeout: 30000 },
 });

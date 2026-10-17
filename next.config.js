@@ -1,17 +1,16 @@
+// Static export for GitHub Pages. andrian-kars.com proxies /solidaro to the Pages build,
+// so the site is built for the same base path in both places.
+const basePath = "/solidaro";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
+  basePath,
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
+  images: { unoptimized: true },
   reactStrictMode: true,
   poweredByHeader: false,
   agentRules: false,
-  i18n: { locales: ["en", "uk", "de", "ja"], defaultLocale: "en" },
-  async headers() {
-    return [{ source: "/:path*", headers: [
-      { key: "X-Content-Type-Options", value: "nosniff" },
-      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-      { key: "X-Frame-Options", value: "DENY" },
-      { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-    ] }];
-  },
 };
 
 module.exports = nextConfig;
