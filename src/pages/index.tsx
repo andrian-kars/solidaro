@@ -16,7 +16,7 @@ export default function Home({ locale }: { locale: Locale }) {
   return <>
     <Seo locale={locale} title={text.title} description={text.description} />
     <section className="hero" id="landing" aria-labelledby="hero-title">
-      <Image src={asset("/images/studio-work-v2.webp")} alt="" fill priority sizes="100vw" className="hero-image" />
+      <Image src={asset("/images/studio-work-v3.webp")} alt="" fill priority sizes="100vw" className="hero-image" />
       <div className="hero-copy wrap"><p className="eyebrow"><span className="status-dot" />{text.hero.eyebrow}</p><h1 id="hero-title">Solidaro<span>*</span></h1><p className="hero-lead">{text.hero.lead}</p><p className="hero-description">{text.hero.text}</p><div className="hero-actions"><Link className="button button-coral" href={localizedPath(locale, "/schedule")}>{text.hero.cta}<ArrowUpRight size={19} aria-hidden="true" /></Link><a className="text-link" href="#work">{text.hero.work}<ArrowDown size={18} aria-hidden="true" /></a></div></div>
     </section>
     <div className="studio-strip"><div className="wrap"><span>{text.hero.caption}</span><span><span className="ukraine-mark" aria-hidden="true" />{text.hero.location}</span></div></div>
